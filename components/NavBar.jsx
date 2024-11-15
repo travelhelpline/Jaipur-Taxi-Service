@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react'
 import {
     FaGripLines,
     FaHouseMedical,
+    FaPhone,
     FaTaxi,
+    FaWhatsapp,
 } from 'react-icons/fa6';
 import {
     IoLogoWhatsapp,
@@ -11,7 +13,7 @@ import {
     IoMdCall,
     IoMdClose,
 } from 'react-icons/io';
-import { MdEmail, } from 'react-icons/md';
+import { MdEmail, MdMail, MdWhatsapp, } from 'react-icons/md';
 import Logo from './Logo'
 import Link from 'next/link';
 import data, { cabRental, placesToVisit, taxiFares, tempoAndBus, tourData } from '@/data/HeaderData';
@@ -57,14 +59,15 @@ const NavBar = () => {
                 <div className="mega-content">
                     <div className="row w-100">
                         {cabRental.map((category, index) => (
-                            <div className="col" key={index}>
+                            <div className="col mb-4" key={index}>
                                 <h4 className="text-tertary">{category.title}</h4>
                                 <hr style={{ borderColor: 'white' }} />
                                 <ul>
                                     {category.items.map((item, idx) => (
-                                        <li key={idx} className='p-2'>
-                                            <Link href="#" className='text-white'> <span className="text-tertary">
-                                                ≻</span> {item}</Link>
+                                        <li key={idx} className='p-2 d-flex'>
+                                            <span className="text-tertary me-2">
+                                            ≻</span> 
+                                            <Link href="#" className='text-white'>{item}</Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -80,14 +83,16 @@ const NavBar = () => {
                 <div className="mega-content">
                     <div className="row w-100">
                         {tempoAndBus.map((category, index) => (
-                            <div className="col" key={index}>
+                            <div className="col mb-4" key={index}>
                                 <h4 className="text-tertary">{category.title}</h4>
+                                <hr />
                                 <ul>
                                     {category.items.map((item, idx) => (
-                                        <li key={idx} className='p-2'>
-                                            <Link href="#" className='text-white'> <span className="text-tertary">
-                                                ≻</span> {item}</Link>
-                                        </li>
+                                       <li key={idx} className='p-2 d-flex'>
+                                       <span className="text-tertary me-2">
+                                       ≻</span> 
+                                       <Link href="#" className='text-white'>{item}</Link>
+                                   </li>
                                     ))}
                                 </ul>
                             </div>
@@ -102,14 +107,16 @@ const NavBar = () => {
                 <div className="mega-content">
                     <div className="row w-100">
                         {tourData.map((category, index) => (
-                            <div className="col" key={index}>
+                            <div className="col mb-4" key={index}>
                                 <h4 className="text-tertary">{category.title}</h4>
+                                <hr />
                                 <ul>
                                     {category.items.map((item, idx) => (
-                                        <li key={idx} className='p-2'>
-                                            <Link href="#" className='text-white'> <span className="text-tertary">
-                                                ≻</span> {item}</Link>
-                                        </li>
+                                        <li key={idx} className='p-2 d-flex'>
+                                        <span className="text-tertary me-2">
+                                        ≻</span> 
+                                        <Link href="#" className='text-white'>{item}</Link>
+                                    </li>
                                     ))}
                                 </ul>
                             </div>
@@ -124,14 +131,16 @@ const NavBar = () => {
                 <div className="mega-content">
                     <div className="row w-100">
                         {taxiFares.map((category, index) => (
-                            <div className="col" key={index}>
+                            <div className="col mb-4" key={index}>
                                 <h4 className="text-tertary">{category.title}</h4>
+                                <hr />
                                 <ul>
                                     {category.items.map((item, idx) => (
-                                        <li key={idx} className='p-2'>
-                                            <Link href="#" className='text-white'> <span className="text-tertary">
-                                                ≻</span> {item}</Link>
-                                        </li>
+                                        <li key={idx} className='p-2 d-flex'>
+                                        <span className="text-tertary me-2">
+                                        ≻</span> 
+                                        <Link href="#" className='text-white'>{item}</Link>
+                                    </li>
                                     ))}
                                 </ul>
                             </div>
@@ -146,14 +155,16 @@ const NavBar = () => {
                 <div className="mega-content">
                     <div className="row w-100">
                         {placesToVisit.map((category, index) => (
-                            <div className="col" key={index}>
+                            <div className="col mb-4" key={index}>
                                 <h4 className="text-tertary">{category.title}</h4>
+                                <hr />
                                 <ul>
                                     {category.items.map((item, idx) => (
-                                        <li key={idx} className='p-2'>
-                                            <Link href="#" className='text-white'> <span className="text-tertary">
-                                                ≻</span> {item}</Link>
-                                        </li>
+                                        <li key={idx} className='p-2 d-flex'>
+                                        <span className="text-tertary me-2">
+                                        ≻</span> 
+                                        <Link href="#" className='text-white'>{item}</Link>
+                                    </li>
                                     ))}
                                 </ul>
                             </div>
@@ -166,34 +177,13 @@ const NavBar = () => {
     return (
         <>
             <div className="m-auto nav container-fluid d-flex justify-content-center flex-column align-items-center px-0">
-                {/* header one */}
-                <div className="nav-child row bg-black w-100 bg-black d-flex py-0 justify-content-center align-items-center">
-                    <div className="d-flex w-auto justify-content-center align-items-center" style={{ borderRight: '1px solid gray' }}>
-                        <MdEmail className="text-white me-1" />
-                        <Link href="mailto:mail@rajasthantravelhelpline.com" target='_blank' className="text-lowercase text-tertary">
-                            mail@rajasthantravelhelpline.com
-                        </Link>
-                    </div>
-                    <div className="d-flex w-auto justify-content-center align-items-center" style={{ borderRight: '1px solid gray' }}>
-                        <IoMdCall className="text-white me-1" />
-                        <Link href="tel:+919024337038" target='_blank' className="text-tertary">
-                            +91-9024337038
-                        </Link>
-                    </div>
-                    <div className="d-flex w-auto justify-content-center align-items-center">
-                        <IoLogoWhatsapp className="text-white me-1" />
-                        <Link href="tel:+919166555888" target='_blank' className="text-tertary">
-                            +91-9166555888
-                        </Link>
-                    </div>
-                </div>
                 {/* header two */}
                 <div className="nav-child w-100 row bg-white px-lg-3 px-sm-2 py-lg-2 py-sm-2 justify-content-center align-items-center">
-                    <div className="col-6 d-flex justify-content-start align-items-center">
+                    <div className="col mb-4-6 d-flex justify-content-start align-items-center">
                         <Logo />
                     </div>
                     {ismobile ? (
-                        <div className="col-6 d-flex justify-content-end align-items-center">
+                        <div className="col mb-4-6 d-flex justify-content-end align-items-center">
                             <button
                                 className="d-flex justify-content-center align-items-center p-3 rounded-5 bg-black shadow-none mobile-ham w-auto"
                                 onClick={handleNavigation}
@@ -201,7 +191,19 @@ const NavBar = () => {
                                 <FaGripLines className='text-white' />
                             </button>
                         </div>) : (<div className="book-now col-6 d-flex justify-content-end align-items-center">
-                            <button className="rounded-4 text-black text-uppercase d-flex align-items-center justify-content-center gap-2">
+                            <a href="tel:+91-"
+                                className="rounded-5 d-flex justify-content-center align-items-center p-3 me-2 bg-tertary-down">
+                                <FaPhone />
+                            </a>
+                            <a href="tel:+91-"
+                                className="rounded-5 d-flex justify-content-center align-items-center p-3 me-2 bg-tertary-down">
+                                <IoLogoWhatsapp />
+                            </a>
+                            <a href="tel:+91-"
+                                className="rounded-5 d-flex justify-content-center align-items-center p-3 me-2 bg-tertary-down">
+                                <MdMail />
+                            </a>
+                            <button className="rounded-4 text-black text-uppercase d-flex align-items-center justify-content-center gap-2 ">
                                 <FaTaxi className='text-white' /> book now
                             </button>
                         </div>
@@ -214,7 +216,6 @@ const NavBar = () => {
                             <Link href="/" className="text-white p-2 px-3">
                                 home
                             </Link>
-
                         </li>
                         <li className="nav-item text-uppercase">
                             <Link href="/about-jaipur-taxi-service" className="text-white p-2 px-3">
@@ -229,7 +230,7 @@ const NavBar = () => {
                                 onMouseEnter={() => handleMouseEnter(index)}
                                 onMouseLeave={handleMouseLeave}
                             >
-                                <Link href="#" className="text-white p-2 px-3">
+                                <Link href="#" className="text-white p-2 px-3 text-nowrap">
                                     {item.title}
                                 </Link>
                                 {activeIndex === index && (
